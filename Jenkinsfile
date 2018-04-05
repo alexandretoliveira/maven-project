@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "cp **/target/*.war /var/lib/docker/volumes/tomcat_webapp/_data/"
+                        sh "sudo cp **/target/*.war /var/lib/docker/volumes/tomcat_webapp/_data/"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "cp **/target/*.war /var/lib/docker/volumes/tomcatprod_webapp_prod/_data/"
+                        sh "sudo cp **/target/*.war /var/lib/docker/volumes/tomcatprod_webapp_prod/_data/"
                     }
                 }
             }
